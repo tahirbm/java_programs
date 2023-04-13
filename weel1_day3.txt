@@ -1,0 +1,71 @@
+Algorithm to find sum of first n natural numbers
+--start
+--read the number n
+--find the sum of first n natural numbers by using the formula sum=(n*(n+1))/2
+--print sum
+--stop
+
+---------------------------------------------------------------------------------
+
+
+Algorithm to find sum of n even numbers
+--start
+--read the number n
+--initialise sum=0,count=1,i=2
+--repeatedly execute the steps until (count<=n)is satisfied for
+	sum=sum+i
+	i=i+2
+	count=count+1
+--print sum
+--end
+
+
+---------------------------------------------------------------------------------
+ Algorithm to find the factorial of n numbers
+--start
+--read the number n
+--initialise factorial=1,count=1,i=1
+--repeatedly execute the steps until (count<=n) is satisfied for
+  fact=fact*i
+  i=i+1
+  count=count+1
+--print factorial
+--stop
+
+---------------------------------------------------------------------------------
+
+Algorithm to find the product of first n odd numbers--start
+--read the number n
+--initialise product=1,count=1,i=1
+--repeatedly execute the steps until (count<=n) is satisfied for
+  -product=product*i
+  -i=i+2
+  -count=count+1
+--print product
+--stop
+
+---------------------------------------------------------------------------------
+Algorithm to find the sum of digits of a postive integer
+--start
+--read the positive integer number
+--initialise sum=0 
+--repeatedly execute the steps until (number!=0)
+  -digit=number%10
+  -sum=sum+digit
+  -number=number/10
+--print sum
+--stop
+
+-----------------------------------------------------------------------------------
+
+Algorithm to reverse the positive integer
+
+--start
+--read the positive integer number
+--initialise rev number=0
+--repeatedly execute the steps until (number!=0)
+--digit=number%10
+--rev number=(rev number*10)+digit
+--number=number/10
+--print rev number 
+--stop
