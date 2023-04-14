@@ -1,0 +1,89 @@
+Algorithm to find the palindrome of a number
+
+1.start
+2.read the number n
+3.intialize reverse number<--0
+4.repeat the steps 5-7 until number!=0
+5.digit<--- number%10
+6.reverse number<--reverse number*10+digit
+7.number<--number/10
+8.print reverse number
+9.if reverse number=n
+     print it is a palindrome
+  else 
+     print not a palindrome
+9.stop
+
+-------------------------------------------------------------------------------------------
+
+Algorithm to find whether a number is armstrong number or not
+1.start
+2.read the number 
+3.intialize sum=0 ,temp=number
+4.repeat the steps 5-7 until number!=0
+5.digit= number%10
+6.cube of digit=digit*digit*digit
+7.sum=sum+cube of digit
+8.number=number/10
+8.print sum
+9.if sum=temp
+     print it is a armstrong number
+  else 
+     print not a armstrong number
+9.stop
+
+
+----------------------------------------------------------------
+
+Algorithm to print first n terms of fibonacci sequemce
+
+1.start
+2.read the number n 
+3.initialise a=0,b=1,count=2
+4.if n==1
+	print a
+5.if n==2
+	print a and b
+6.else
+	print a and b
+7.repeat the steps(a)-(e) until count<n
+ a.c=a+b
+ b.printc
+ c.a=b
+ d.b=c
+ e.count=count+1
+8.stop
+---------------------------------------------------------------------------------------
+
+Algorithm to find the sum of any n numbers
+
+1.start
+2.read the number n
+3.initialise sum=0,count=1
+4.repeatedly execute the steps(a)-(c) until count<=n
+ a.read the number
+ b.sum=sum+number
+ c.count=count+1
+5.print sum
+6.stop
+
+---------------------------------------------------------------------------------------
+
+write an algorithm to find whether given positive integer is strong number or not
+
+1.start
+2.read the positive integer as number 
+3.initialise sum=0 temp=number
+4.repeatedly execute the steps (a)-(d) until number!=0
+a.digit=number%10
+b.find the factorial of digit
+c.number=number/10
+d.sum=number+factorial of digit
+5.if sum==temp
+print "it is a strong number"
+else
+print"it is not a strong number"
+6.stop
+
+
+
