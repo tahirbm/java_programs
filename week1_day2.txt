@@ -1,0 +1,82 @@
+Algorithm to find the gross salary of an employee given the basic salary ,DA,Hra
+grosss salary=basic salary+DA+Hra
+DA=50% of salary
+Hra=20% of salary
+
+--start
+--read the basic salary
+--find the DA value as --DA--(50*basic salary)/100
+--find the HRA value as --HRA--(20*basic salary)/100
+--find the gross salary using the formula  gross salary =basic salary+DA+Hra
+--print gross salary
+--end
+----------------------------------------------------------------------------------------------
+
+
+write an algorithm to swap the values of two quantities
+ 
+    number1      number2
+      10             20
+ 
+after swapping:
+ 
+   number1     number2
+    20           10
+
+--start
+--read the two quantities as number1,number2
+--Assign the number1 value to temp
+  --number1=temp
+--assign the number2 value to number1
+  --number2=number1
+--assign the temp value to number2
+   --temp=number2
+--print the swapped values
+--end
+
+-----------------------------------------------------------------------------------------------
+-----without temporary variable swapping of two quantities
+--start
+--read the two quantities as x and y
+--print x and y
+--x=x+y
+--y=x-y
+--x=x-y
+print x and y
+
+---------------------------------------------------------------------------------------------------
+
+algorithm to find whether a student is eligible to admission(if percentage is greater than 85 he is eligible
+
+--start
+--read the percentage
+--if the percentage is greater than 85
+--print 'eligible'
+--else
+--print'not eligible'
+-----------------------------------------------------------------------------------------------------
+
+algorithm to find biggest of two number
+--start
+--read the numbers as number1 and number2
+--if(number1>number2)
+--print 'number1 is bggest'
+--else
+--print'number2 is biggest'
+
+------------------------------------------------------------------------------------------------------
+
+algorithm to find the biggest of 3 numbers
+--start
+--read the number as number1,number2,number3
+--if (number1>number2)
+     if (number1>number3)
+	print 'number1 is bigger'
+
+     else
+	print 'number3 is bigger'
+  if(number2>number3)
+	print'number2 is bigger'
+     else
+	print'number3 is bigger'
+--stop
