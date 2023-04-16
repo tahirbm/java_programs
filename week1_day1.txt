@@ -1,0 +1,6 @@
+Alogorithm to find area of rectangle
+start
+read length,breadth
+find area by using formula length*breadth
+print area
+end
