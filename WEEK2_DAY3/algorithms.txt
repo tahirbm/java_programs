@@ -1,0 +1,76 @@
+1.suppose you are withdrawing money from the ATM. suppose available notes are 500,200 and 100 in the ATM.
+user has asked for withdrawal of money from the ATM.
+write an algorithm to determine the minimum number of notes to be dispensed to the user for the requested money.
+  eg:3700 ------
+       37 *100 =37
+       7*500+1*200-----8
+       7*500+2*100 ----9
+ minimum number of notes ---8
+
+step1 : start
+step2 : read the amount of money as withdraw_money
+step3 : initialize count<--0
+step4 : if (withdraw_money%100==0)
+         {
+           a. execute the steps (i)-(iii)
+               i). if (withdraw_money>=500)
+                       a. i<---withdraw_money/500 
+                       b. withdraw_money<--withdraw_money%500
+                       c. count<--count+i
+              ii). if (withdraw_money>=200)
+                       a. i<---withdraw_money/200
+                       b. withdraw_money<--withdraw_money%200
+                       c. count<--count+i
+            iii). if (withdraw_money>=100)
+                       a. i<---withdraw_money/100
+                       b. withdraw_money<--withdraw_money%100
+                       c. count<--count+i
+           b. print count
+        }
+       else
+             print" money will be in the multiples of 100 only"
+step6 :stop
+        
+--------------------------------------------------------------------------------
+
+
+2.you are purchasing a mobile from a shop. shop owner want to give discount
+  if(cost>100000) -----10% discount
+  if(cost<100000 and cost>50000) -----5% discount
+  in all other cases-----2% discount
+  20% GST will be added(on the actual price only)
+ you need to write an algorithm to determine the total price of the mobile phone
+
+step1 : start
+step2 : read the amount
+step3 : calculate the GST by using the formula GST<---(20*amount)/100
+step4 : if (amount>=100000)
+                discount<--(10*amount)/100
+        else if (cost<100000 and cost>50000)
+                discount<--(5*amount)/100
+        else
+                discount<--(2*amount)/100
+               
+step5 : final_amount<--(amount-discount)+GST
+step6 : print final_amount
+step7 : stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
