@@ -1,0 +1,60 @@
+begin
+    numeric previous_units,present_units,units,bill,final_bill
+    print("enter the previous units and present units")
+    input previous_units
+    input present_units
+    units=present_units-previous_units
+    if (units==0){
+        print("50 Rs")
+     }
+
+ 
+
+    else{
+          if (units<=50){
+             bill=units*2.30
+           }
+          else if (units<=150){
+             bill=(50*2.30)+((units-50)*2.75)
+           }
+          else if (units<=250){
+             bill=(50*2.30)+(100*2.75)+((units-150)*3.50)
+           }
+          else{
+             bill=(50*2.30)+(100*2.75)+(100*3.50)+((units-250)*4.50)
+           }
+         print("befotre GST, bill is",bill)
+         final_bill = ((18*bill)/100 )+bill
+         print("after GST ,bill is",final_bill)
+     }
+stop 
+
+-----------------------------OR------------------------------------
+
+begin
+	numeric units,bill amount
+	input enter the units
+	compute total units=present unit-prev unit
+	if total unit=0
+	 print("bill amount is 50")
+	else{
+	 if(total units!=0){
+	  {
+	   if(units<=50)
+           print(bill 1=(number of units*2.30))
+           else if(units<=150)
+	   print(bill 2=(number of units*2.75))
+	   else if(units<=250)
+	   print(bill 3=number of units*3.50))
+	   else if(units>250)
+	   print(bill 4=number of units*4.50))
+	  }
+	  print net bill=bill 1+bill 2+bill 3+bill 4
+          compute total bill=netbill+((net bill/100)*18)
+	  print total bill
+end
+
+
+
+
+
