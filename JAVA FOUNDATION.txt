@@ -1,0 +1,110 @@
+JAVA-java is high level,object oriented ,reliable ,secured programming language
+ features of java
+  1.simple
+  2.secured
+  3.robust
+  4.architectural neutral
+  5.portable
+  6.multi threaded
+  7.distributed
+  8.dynamic
+  9.platform independent
+  10.interpreted
+
+java program section
+
+1.Documentation section
+2.package statement
+3.import statement
+4.interface statement
+5.class definitions
+6.Main method class
+{
+main method definition
+}
+
+FUNCTION-SUBPROCEDURE OR SUBROUTINE THAT IS IUSED TO P[ERFORM SPECIFIC TASK
+METHOD-IT IS LIKE FUNCTION BUT IT IS DEFINED INSIDE A CLASS
+STATEMENT-REPRESENT AN ACTION OR SEQUENCE OF ACTION
+
+How to save compile and run a java program
+--save: MyFirstApp.java using .java extension
+--compile:  javac MyFirstApp.java
+--run: java MyFirstApp
+
+->JDK-JAVA DEVELOPMENT KIT-develop and run java application
+  ->JRE-JAVA RUNTIME ENVIRONMENT-run java application
+    ->JVM-JAVA VIRTUAL MACHINE -contains JIT COMPILER-JUST IN TIME
+ 
+TOKENS-smallest individual units of program that are recognised by compiler
+ types of tokens are:
+	1.Keywords
+	2.Identifiers
+	3.Literals
+	4.operators
+	5.special symbols
+--Keywords-standard predefined units
+   there are 50 types of keywords 
+--identifiers-identify various programming elements
+   rules:
+	*contains alphabets,digits,underscore and dollar symbol
+	*doesnt begin with digit	
+	*keywords cannot be identifiers
+	*doesnt contain white spaces
+--Literals-any constant value in program
+--operators-symbols that are used to perform certain operations
+   *arithmetic 
+   *logical
+   *assignment
+   *ternary
+   *relational
+   *increment and decrement
+   *bitwise operator
+
+ NAMING CONVENTIONS
+ *name of the package is written in small letters
+ *each word of class names and interface starts with capital letters
+ *first word of variables and method name is smal letter and from second word starts with capital letters
+ *constants written in capitals
+ *keywords to be written in lowercase
+
+ DATA TYPES
+ Two types
+1.primitive-predefined and store individual values
+2.non primitive-user defined
+  
+  -->primitive data types are
+   	  *numeric 
+	  *non numeric
+    1.numeric has 1.floating point 2.integer
+       --floating point:*float -4 bytes
+			*double-8 bytes
+       --integer: 
+	*long-8 bytes -size is -2^63 to 2^63-1
+	*short-2 bytes-size is -2^15 to 2^15-1
+        *byte-1 bytes-size is -2^7 to 2^7-1
+	*int -4 bytes-size is -2^31 to 2^31-1
+    2.non numeric has 
+        *boolean - true or false
+	*character- char
+  
+    -->non primitive data types are
+        *strings 
+	*arrays
+	*user defined classes
+
+VARIABLES-Named memeory location whose value can change during the execution of programs
+  syntax:datatype var1,var2,...var n;
+   
+Example:
+   public class MyApp{
+    public static void main(string[] args)
+     {
+     int a=10;
+     float b=23.56f
+    
+     system.out.println("the integer variable is"+a);
+     system.out.println("the float variable is"+b)
+  }
+}
+			
