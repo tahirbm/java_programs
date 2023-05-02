@@ -1,0 +1,107 @@
+//program 1 for scanner class method
+import java.util.Scanner;
+
+public class FirstProgram {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int a, b;
+    System.out.println("enter the integer value");
+    a = sc.nextInt();
+    b = sc.nextInt();
+    System.out.println("a+b=" + (a + b));
+    System.out.println("a-b=" + (a - b));
+    System.out.println("a*b=" + (a * b));
+    System.out.println("a/b=" + (a / b));
+  }
+}
+
+//program to find area of rectangle
+import java.util.Scanner;
+
+public class AreaOfRectangle {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int length, breadth;
+    System.out.println("enter the length");
+    System.out.println("enter the breadth");
+    length = sc.nextInt();
+    breadth = sc.nextInt();
+    System.out.println("Area Of Rectangle=" + (length * breadth));
+  }
+}
+
+//program to find simple interest
+import java.util.Scanner;
+
+public class SimpleInterest {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int principalAmount, rate, time;
+    System.out.println("enter principalAmount,rate,time");
+    principalAmount = sc.nextInt();
+    rate = sc.nextInt();
+    time = sc.nextInt();
+    System.out.println("simple interest is=" + ((principalAmount * rate * time) / 100));
+  }
+}
+
+//program to swap two values without temporary variable
+
+import java.util.Scanner;
+
+public class Swapping {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int x, y;
+    System.out.println("enter the values");
+    x = sc.nextInt();
+    y = sc.nextInt();
+    x = x + y;
+    y = x - y;
+    x = x - y;
+    System.out.println("x:" + x);
+    System.out.println("y:" + y);
+  }
+}
+
+//program 2 for scanner class methods
+import java.util.Scanner;
+
+public class ThirdProgram {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String name;
+    System.out.println("enter the name");
+    name = sc.nextLine();
+    System.out.println("the entered name is:" + name);
+    int age;
+    System.out.println("enter the age");
+    age = sc.nextInt();
+    System.out.println("entered age is :" + age);
+    float percentage;
+    System.out.println("enter the percentage");
+    percentage = sc.nextFloat();
+    System.out.println("the entered percentage is:" + percentage);
+  }
+
+}
+
+//program for realtional operators
+import java.util.Scanner;
+
+public class RelationalOperator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int income;
+    int age;
+    System.out.println("enter the income,age");
+    income = sc.nextInt();
+    age = sc.nextInt();
+    if (income >= 50000 && age >= 20) {
+      System.out.println("true");
+    } else {
+      System.out.println("false");
+    }
+
+  }
+}
