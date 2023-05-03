@@ -1,0 +1,212 @@
+1.//program to find maximum of two numbers
+import java.util.Scanner;
+
+public class MaximumOfTwo {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int a;
+    int b;
+    System.out.println("enter the two numbers");
+    a = sc.nextInt();
+    b = sc.nextInt();
+    if (a > b) {
+      System.out.println("a is greater:" + a);
+    } else {
+      System.out.println("b is greater:" + b);
+    }
+  }
+}
+
+
+2.//program to find max of three numbers
+import java.util.Scanner;
+
+public class MaximumOfThree {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int a, b, c;
+    System.out.println("enter three numbers");
+    a = sc.nextInt();
+    b = sc.nextInt();
+    c = sc.nextInt();
+    if ((a > b) && (a > c)) {
+      System.out.println("a is greater:"+a);
+    }
+    else if (b > c) {
+      System.out.println("b is greater:"+b);
+
+    } else {
+      System.out.println("c is greater:"+c);
+    }
+
+  }
+}
+
+3.//program to find whether a number is positive negative or zero 
+import java.util.Scanner;
+
+public class PositiveNegative {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int a;
+    System.out.println("enter the number");
+    a = sc.nextInt();
+    if (a > 0) {
+      System.out.println("the number is positive");
+    } else if (a < 0) {
+      System.out.println("the number is negative");
+    } else {
+      System.out.println("the number is zero");
+    }
+  }
+}
+
+4.//program to check whether a number is divisible by 5 and 11 or not.
+import java.util.Scanner;
+
+public class Divisible {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int a;
+    System.out.println("enter the number");
+    a = sc.nextInt();
+    if (a % 5 == 0 && a % 11 == 0) {
+      System.out.println("number is divisible by 5 and 11");
+    } else {
+      System.out.println("number is not divisible by 5 and 11");
+    }
+  }
+}
+
+5.
+//program to check whether a number is even or odd
+import java.util.Scanner;
+
+public class EvenOdd {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int a;
+    System.out.println("enter the number");
+    a = sc.nextInt();
+    if (a % 2 == 0) {
+      System.out.println("the number is even");
+    } else {
+      System.out.println("the number is odd");
+    }
+  }
+}
+
+6.//Write a java program to check whether a character is alphabet or not
+import java.util.Scanner;
+public class Alphabet
+{
+    public static void main(String args[])
+    {
+        char c;
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter any  character");
+        c=s.next().charAt(0);
+        
+        if( (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+                    System.out.println(c + " is an alphabet.");
+            else
+                    System.out.println(c + " is not an alphabet.");
+        
+            
+    }
+} 
+
+
+
+7.//program to check whether alphabet is vowel or consonant
+import java.util.Scanner;
+
+public class VowelConsonant {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    char a;
+    System.out.println("enter the character");
+    a = sc.next().charAt(0);
+    if ((a >= 'a') && (a <= 'z') || (a >= 'A') && (a <= 'Z')) {
+      if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u') {
+        System.out.println(a + ":the entered character is alphabet and vowel");
+      } else {
+        System.out.println(a + ":the entered character is alphabet and consonant");
+      }
+    } else {
+      System.out.println(a + ":the entered character is not alphabet");
+    }
+  }
+}
+
+
+8.//program to check whether a character is alphabet digit or special character
+import java.util.Scanner;
+
+public class AlphaDigitSpecial {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    char a;
+    System.out.println("enter the character");
+    a = sc.nextLine().charAt(0);
+    if ((a >= 'a') && (a <= 'z') || (a >= 'A') && (a <= 'Z')) {
+      System.out.println(a + ":entered character is alphabet");
+    } else if ((a >= '0') && (a <= '9')) {
+      System.out.println(a + ":the entered character is digit");
+    } else {
+      System.out.println(a + ":the entered character is special character");
+    }
+  }
+}
+
+9.//program to check whether a character is uppercase or lowercase     alphabet.
+import java.util.Scanner;
+
+public class UpperLower {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    char a;
+    System.out.println("enter a charcater");
+    a = sc.nextLine().charAt(0);
+    if (a >= 'a' && a <= 'z') {
+      System.out.println(" the charcater is lowercase alphabet");
+    } else if (a >= 'A' && a <= 'Z') {
+      System.out.println("the character is uppercase alphabet");
+    } else {
+      System.out.println("charcater is not a alphabet");
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
