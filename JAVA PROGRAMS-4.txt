@@ -1,0 +1,113 @@
+1.//program to find the week day
+import java.util.Scanner;
+
+public class WeekDay {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int num;
+    System.out.println("enter the week number");
+    num = sc.nextInt();
+    switch (num) {
+      case 1:
+        System.out.println("Sunday");
+        break;
+      case 2:
+        System.out.println("Monday");
+        break;
+      case 3:
+        System.out.println("Tuesday");
+        break;
+      case 4:
+        System.out.println("Wednesday");
+        break;
+      case 5:
+        System.out.println("Thursday");
+        break;
+      case 6:
+        System.out.println("Friday");
+        break;
+      case 7:
+        System.out.println("Saturday");
+        break;
+      default:
+        System.out.println("enter number between 1 and 7");
+    }
+  }
+}
+
+
+2./*WAP to input marks of five subjects Physics, Chemistry, Biology,     Mathematics and Computer. Calculate percentage and grade according to     following:
+    Percentage >= 90% : Grade A
+    Percentage >= 80% : Grade B
+    Percentage >= 70% : Grade C
+    Percentage >= 60% : Grade D
+    Percentage >= 40% : Grade E
+    Percentage < 40% : Grade F*/
+
+import java.util.Scanner;
+
+public class StudentGrade {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int physics;
+    int chemistry;
+    int biology;
+    int mathematics;
+    int computer;
+    int totalMarks;
+    float percentage;
+    System.out.println("Enter the physics marks");
+    physics = sc.nextInt();
+    System.out.println("Enter the chemistry marks");
+    chemistry = sc.nextInt();
+    System.out.println("Enter the biology marks");
+    biology = sc.nextInt();
+    System.out.println("Enter the mathematics marks");
+    mathematics = sc.nextInt();
+    System.out.println("Enter the computer marks");
+    computer = sc.nextInt();
+    totalMarks = (physics + biology + chemistry + mathematics + computer);
+    percentage = ((totalMarks * 100) / 500);
+    System.out.println("percentage of student is=" + percentage);
+    if (percentage >= 90) {
+      System.out.println("Grade A");
+    } else if (percentage >= 80) {
+      System.out.println("Grade B");
+    } else if (percentage >= 70) {
+      System.out.println("Grade C");
+    } else if (percentage >= 60) {
+      System.out.println("Grade D");
+    } else if (percentage >= 40) {
+      System.out.println("Grade A");
+    } else {
+      System.out.println("Grade F");
+    }
+  }
+}
+
+3.//JAVA program to develop a game rock paper scissor
+import java.util.Scanner;
+
+public class RockPaperScissor {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int player1_move;
+    int player2_move;
+    System.out.println("1:Rock");
+    System.out.println("2:Paper");
+    System.out.println("3:Scissor");
+    System.out.println("enter the player1_move");
+    player1_move = sc.nextInt();
+    System.out.println("enter the player2_move");
+    player2_move = sc.nextInt();
+    if ((player1_move == 1 && player2_move == 2) || (player1_move == 1 && player2_move == 3)
+        || (player1_move == 3 && player2_move == 2)) {
+      System.out.println("player1 win");
+    } else if ((player1_move == 2 && player2_move == 1) || (player1_move == 3 && player2_move == 1)
+        || (player1_move == 2 && player2_move == 3)) {
+      System.out.println("player2 win");
+    } else {
+      System.out.println("game tie");
+    }
+  }
+}
