@@ -1,0 +1,73 @@
+// WAP to print all natural numbers from 1 to n. - using while loop
+
+import java.util.Scanner;
+public class Natural{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num,i=0;
+    System.out.println("enter num");
+    num=sc.nextInt();
+    System.out.println("the numbers are");
+    while(i<=num){
+      i=i+1;
+      System.out.println(i);
+    }
+  }
+}
+
+// WAP to print all natural numbers in reverse (from n to 1). -     using while loop
+
+import java.util.Scanner;
+
+public class ReverseNatural {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int num;
+    System.out.println("enter the number");
+    num = sc.nextInt();
+    while (num>=1) {
+      num = num - 1;
+      System.out.println(num);
+    }
+
+  }
+}
+// WAP to print all alphabets from a to z. - using while loop
+
+public class AllAlphabets {
+  public static void main(String[] args) {
+    char ch = 'a';
+    while (ch >= 97 && ch <= 122) {
+      System.out.println(ch);
+      ch++;
+    }
+  }
+}
+20. WAP to print all even numbers between 1 to 100. - using while     loop
+
+import java.util.Scanner;
+public class EvenNumber{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int a;
+    a=2;
+    while(a<=100){
+      System.out.println(a);
+      a=a+2;
+    }
+  }
+}
+21. WAP to print all odd number between 1 to 100.
+
+import java.util.Scanner;
+public class OddNumber{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int a;
+    a=1;
+    while(a<=100){
+      System.out.println(a);
+      a=a+2;
+    }
+  }
+}
