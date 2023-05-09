@@ -1,0 +1,120 @@
+1.//write a java program to read two integers and calculate absolute value ,square root of two integers
+import java.util.Scanner;
+public class AbsoluteSquare{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num1,num2;
+    System.out.println("enter the two numbers");
+    num1=sc.nextInt();
+    num2=sc.nextInt();
+      System.out.println("absolute value of num1:"+(Math.abs(num1)));
+      System.out.println("absolute value of num2 is:"+(Math.abs(num2)));
+    System.out.println("square root of num1:"+(Math.sqrt(num1)));
+    System.out.println("square root of num2 is:"+(Math.sqrt(num2)));
+    }
+  }
+
+2.//Write a Java program that prompts the user to enter their age and prints out the number of years left until they can retire (assuming retirement age is 65)
+import java.util.Scanner;
+
+public class AgeNumOfYears {
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    int age,number_of_years_left;
+    System.out.println("enter your age");
+    age=sc.nextInt();
+    number_of_years_left=65-age;
+    System.out.println("number of years left for retirement="+number_of_years_left);
+  
+}
+}
+
+3.//assume that there are 500,200 and 100 notes are there in the ATM. write a java program to find the minimum number of notes to be dispensed for the requested amount using conditionals only . do not use loops
+import java.util.Scanner;
+public class AtmMoney{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int amount,min_notes=0,notes;
+    System.out.println("enter the amount");
+    amount=sc.nextInt();
+    if(amount%100==0){
+      if(amount>=500){
+        notes=amount/500;
+        min_notes=min_notes+notes;
+        amount=amount%500;
+      }
+      if(amount>=200){
+        notes=amount/200;
+        min_notes=min_notes+notes;
+        amount=amount%200;
+      }
+      if(amount>=100){
+        notes=amount/100;
+        min_notes=min_notes+notes;
+        amount=amount%100;
+      }  
+        System.out.println("minimum number of notes:"+min_notes);
+      }
+    }
+  }
+
+4./*Write a Java program that prompts the user to enter their weight in kilograms and height in meters, and calculates their body mass index (BMI) using conditional statements and you need to print underweight,healthy ,overweight and obessity according to the following
+    bmi <18                underweight
+    bmi >=18 and bmi<25    healthy
+    bmi>=25 and bmi<30     overweight
+    bmi>=30                obessity*/
+import java.util.Scanner;
+
+public class Bmi {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    double weight, height, bmi;
+    System.out.println("enter the weight");
+    weight = sc.nextDouble();
+    System.out.println("enter the height");
+    height = sc.nextDouble();
+    bmi = (weight / (height * height));
+    System.out.println("bmi is:" + bmi);
+    if (bmi < 18) {
+      System.out.println("you are underweight");
+    } else if (bmi >= 18 && bmi < 25) {
+      System.out.println("you are healthy");
+    } else if (bmi >= 25 && bmi < 30) {
+      System.out.println("you are overweight");
+    } else {
+      System.out.println("you are obessity");
+    }
+  }
+}
+
+5.//Write a Java program that prompts the user to enter three numbers and finds the maximum and minimum values.
+import java.util.Scanner;
+import java.lang.Math;
+public class MaxMin{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num1,num2,num3;
+    System.out.println("enter three number");
+    num1=sc.nextInt();
+    num2=sc.nextInt();
+    num3=sc.nextInt();
+    if(num1>num2 && num1>num3){
+      System.out.println("num1 is greater:"+num1);
+    }
+    else if(num2>num3 && num2>num1){
+      System.out.println("num2 is greater:"+num2);
+    }
+    else{
+      System.out.println("num3 is greater:"+num3);
+    }
+    if(num1<num2 && num1<num3){
+      System.out.println("num1 is minimum:"+num1);
+    }
+    else if(num2<num3 && num2<num1){
+      System.out.println("num2 is minimum:"+num1);
+    }
+    else{
+      System.out.println("num3 is minimum:"+num1);
+    }
+  }
+}
