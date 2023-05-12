@@ -72,16 +72,14 @@ public class IntPower{
     Scanner sc=new Scanner(System.in);
     System.out.println("enter the number");
     int num=sc.nextInt();
-    if(num%2==0){
-       num=num/2;
-      if(num==1){
-      System.out.println("it is a power of 2");
-    }
-      else{
-      System.out.println("it is not a power of 2");
+    if (num <= 0) {
+      System.out.println(num + " is not a power of 2");
+    } else if ((num & (num - 1)) == 0) {
+      System.out.println(num + " is a power of 2");
+    } else {
+      System.out.println(num + " is not a power of 2");
     }
   }
-}
 }
 
 
