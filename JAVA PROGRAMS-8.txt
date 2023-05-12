@@ -1,0 +1,177 @@
+1.//Write a Java program that reads a floating-point number and prints "zero" if the number is zero. Otherwise, print "positive" or "negative". Add "small" if the absolute value of the number is less than 1, or "large" if it exceeds 1,000,000 else add "medium"
+
+import java.util.Scanner;
+import java.lang.Math;
+public class FloatingPointMain{
+  public static void main(String[] args){
+    FloatingPoint fp=new FloatingPoint();
+    fp.floating();
+  }
+}
+class FloatingPoint{
+  public void floating(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number");
+    float num=sc.nextFloat();
+    if(num==0){
+      System.out.println("zero");
+    }
+    else if(num>0){
+      System.out.println("positive");
+    }
+    else if(num<0){
+      System.out.println("negative");
+    }
+  if(num<1 &&num >0){
+      System.out.println("small");
+    }
+    else if(num>1000000){
+      System.out.println("large");
+    }
+    else{
+      System.out.println("medium");
+    }
+  }
+}
+
+
+2./*Given an integer, , perform the following conditional actions:
+ 
+If  is odd, print Weird
+If  is even and in the inclusive range of  2 to 5, print Not Weird
+If  is even and in the inclusive range of 6 to 20 , print Weird
+If  is even and greater than 20 , print Not Weird*/
+
+import java.util.Scanner;
+public class IntCondition{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number");
+    int num=sc.nextInt();
+    if(num%2!=0){
+      System.out.println("weird");
+    }
+    else {
+      if(num>=2 && num<=5){
+      System.out.println("Not weird");
+    }
+    else if(num>=6 && num<=20){
+      System.out.println("weird");
+    }
+    else if(num>20){
+      System.out.println("not weird");
+    }
+  }
+}
+}
+
+3.//Write a Java program to check if a given integer is a power of 2 or not, using only co nditional statements don't use loops
+import java.util.Scanner;
+public class IntPower{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number");
+    int num=sc.nextInt();
+    if(num%2==0){
+       num=num/2;
+      if(num==1){
+      System.out.println("it is a power of 2");
+    }
+      else{
+      System.out.println("it is not a power of 2");
+    }
+  }
+}
+}
+
+
+4.//write a java program to check whether number is a valid mobile number or not( A number is valid mobile  number if it contains 10 digits)(use  only conditionals)(don't use loops)
+import java.util.Scanner;
+public class MobileNumberMain{
+  public static void main(String[] args){
+      MobileNumber mn=new MobileNumber();
+      mn.Mobile();
+    }
+  }
+class MobileNumber{
+  public void Mobile(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter mobile number");
+    long m=sc.nextLong();
+    long max=9999999999L;
+    long min=1000000000;
+    if(m>=min && m<=max){
+      
+      System.out.println("valid mobile number");
+    }
+      else{
+      System.out.println("invalid mobile number");
+      }
+  }
+}
+
+
+5.//WAP to print multiplication table of any number.
+import java.util.Scanner;
+public class MultipleTable{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number");
+    int n=sc.nextInt();
+    System.out.println("enter the range");
+    int range=sc.nextInt();
+    int i=1;
+    while(i<=range){
+      System.out.println(n+ "*" + i + "="+n*i);
+      i=i+1;
+    }
+  }
+}
+
+6.//program to find whetehr a number is positive negative or zero
+import java.util.Scanner;
+public class PosNegZero{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a number");
+    int a=sc.nextInt();
+    if(a>0){
+      System.out.println("a is positive number");
+    }
+    else if(a<0){
+      System.out.println("a is negative number");
+    }
+    else{
+      System.out.println("it is zero");
+    }
+      
+    }
+  }
+
+
+7.//Write a Java program that reads two floating-point numbers and tests whether they are the same up to three decimal places
+
+import java.util.Scanner;
+import java.lang.Math;
+public class TwoFloatingPointMain{
+  public static void main(String[] args){
+    TwoFloatingPoint tf=new TwoFloatingPoint();
+    tf.twofloat();
+  }
+}
+class TwoFloatingPoint{
+  public void twofloat(){
+    Scanner sc= new Scanner(System.in);
+    System.out.println("enter number 1");
+    float num1=sc.nextFloat();
+    System.out.println("enter number 2");
+    float num2=sc.nextFloat();
+    float absolute_value = Math.abs(num1-num2);
+    if(absolute_value<0.001){
+      System.out.println("they are same upto 3 decimal points");
+    }
+    else{
+      System.out.println("they are not same upto 3 decimal points");
+    }
+  }
+}
