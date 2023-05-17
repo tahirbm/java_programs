@@ -1,0 +1,166 @@
+// display cities using Array
+import java.util.Scanner;
+public class ArrayExample2Main{
+  public static void main(String[] args){
+    ArrayExample2 ae=new ArrayExample2();
+    ae.array();
+  }
+}
+class ArrayExample2{
+  public void array(){
+    Scanner sc=new Scanner(System.in);
+    String cities[]=new String[5];
+    System.out.println("enter the cities names");
+    for(int i=0;i<cities.length;i++){
+      cities[i]=sc.next();
+    }
+      System.out.println("the cities names are");
+    
+    for(int i=0;i<cities.length;i++){
+      System.out.println(cities[i]);
+    }
+    }
+  }
+
+
+
+//display the array elements
+import java.util.Scanner;
+public class ArrayExampleMain{
+  public static void main(String[] args){
+    ArrayExample ae=new ArrayExample();
+    ae.array();
+  }
+}
+class ArrayExample{
+  public void array(){
+    Scanner sc=new Scanner(System.in);
+    int marks[]=new int[5];
+    System.out.println("enter the array elements");
+    for(int i=0;i<marks.length;i++){
+      marks[i]=sc.nextInt();
+    }
+      System.out.println("the elements entered are");
+      for(int i=0;i<marks.length;i++){
+        System.out.println(marks[i]);
+      }
+    }
+  }
+
+
+//to find the number of negative and positive numbers in array
+import java.util.Scanner;
+public class ArrNegPosMain{
+  public static void main(String[] args){
+    ArrNegPos np=new ArrNegPos();
+    np.neg();
+  }
+}
+class ArrNegPos{
+  public void neg(){
+    Scanner sc=new Scanner(System.in);
+    int arr[]=new int[5];
+    System.out.println("enter the elemnets");
+    int count=0,count1=0;
+    for(int i=0;i<5;i++){
+      arr[i]=sc.nextInt();
+    }
+    for(int i=0;i<5;i++){
+      if(arr[i]<0){
+         count=count+1;
+      }
+      else{
+        count1=count1+1;
+      }
+    }
+        System.out.println("number of negative array numbers are:"+count);
+    System.out.println("number of positive array numbers are:"+count1);
+      }
+    }
+  
+
+
+//to print the indices if sum of corresponding numbers is equal to given key number
+import java.util.Scanner;
+public class IndicesKeyMain{
+  public static void main(String[] args){
+    IndicesKey ik=new IndicesKey();
+    ik.key();
+  }
+}
+class IndicesKey{
+  public void key(){
+    Scanner sc=new Scanner(System.in);
+    int arr[]=new int[6];
+    System.out.println("enter the array elemnts");
+    for(int i=0;i<6;i++){
+    arr[i]=sc.nextInt();
+    }
+    System.out.println("enter the key element");
+      int key=sc.nextInt();
+    for(int i=0;i<6;i++){
+      for(int j=i+1;j<6;j++){
+        if((arr[i]+arr[j])==key){
+          System.out.println(i+" "+j);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+//to search the key elements in array
+import java.util.Scanner;
+public class KeyArrMain{
+  public static void main(String[] args){
+    KeyArr ka=new KeyArr();
+    ka.key();
+  }
+}
+class KeyArr{
+  public void key(){
+    Scanner sc=new Scanner(System.in);
+    int arr[]=new int[6];
+    System.out.println("enter the elements");
+    for(int i=0;i<6;i++){
+     arr[i]=sc.nextInt();
+    }
+    System.out.println("enter the key elements to search");
+    int key=sc.nextInt();
+    int count=0;
+    for(int i=0;i<6;i++){
+      if(key==arr[i]){
+         System.out.println("key element is found at"+i);
+        count=count+1;
+        break;
+      }
+    }
+        if(count==0){
+        System.out.println("key elemnt is not in array");
+      }
+    }
+    
+  }
+
+
+
+
+//write a java program to find the max temperature in a week
+import java.util.Scanner;
+public class MaxTempMain{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    double Temp[]= new double[7];
+    System.out.println("enter the temperatures");
+    for(int i=0;i<7;i++){
+      Temp[i] = sc.nextDouble();
+    }
+    double max= Temp[0];
+    for(int i=0;i<7;i++){
+      if(max < Temp[i])
+        max=Temp[i];
+    }
+    System.out.println("maximum temperature is:"+ max);
+    
