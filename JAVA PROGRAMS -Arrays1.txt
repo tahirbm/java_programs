@@ -1,0 +1,166 @@
+//write a java program to find the difference between the first and last digit of a positive integer
+import java.util.Scanner;
+import java.lang.Math;
+public class ProgramMain{
+  public static void main(String[] args){
+    Program pm=new Program();
+    pm.prog();
+  }
+}
+class Program{
+  public void prog(){
+    Scanner sc=new Scanner(System.in);
+    int n,digit,diff=0,count=0;
+    System.out.println("enter the number");
+    n=sc.nextInt();
+    int temp=n;
+    do{
+      digit=n%10;
+      count=count+1;
+      n=n/10;
+    }
+      while(n>0);
+    int first_digit=(int)(temp/((Math.pow(10,(count-1)))));
+    int last_digit=temp%10;
+    diff=first_digit-last_digit;
+    System.out.println("diff of first and last digit of number is "+diff);
+    
+  }
+}
+
+
+//prog to print primenumbers from an array
+import java.util.Scanner;
+public class ArrayPrimeMain{
+  public static void main(String[] args){
+    ArrayPrime pm =new ArrayPrime();
+    pm.array();
+  }
+}
+class ArrayPrime{
+  public void array(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number of array elements");
+    int n=sc.nextInt();
+    int arr[]=new int[n];
+    System.out.println("enter the array elements");
+    for(int i=0;i<arr.length;i++)
+      arr[i]=sc.nextInt();
+    for(int i=0;i<arr.length;i++){
+      int nf=0;
+      for(int j=1;j<=arr[i];j++){
+        if(arr[i]%j==0)
+        nf=nf+1;
+    }
+    if(nf==2)
+      System.out.println(arr[i]);
+    
+    else
+      System.out.println("no prime numbers in the array"); 
+  }
+}
+}
+
+//Create a number guessing game where the computer generates a random number and the user has to guess it. if user Guess is incorrect, then give hints (weather the actual number is less than/ greater than guess number).
+import java.util.Scanner;
+import java.util.Random;
+public class NumberGameMain{
+  public static void main(String[] args){
+    NumberGame ng=new NumberGame();
+    ng.game();
+  }
+}
+class NumberGame{
+  public void game(){
+    Scanner sc=new Scanner(System.in);
+    Random random=new Random();
+    System.out.println("enter the guessed number");
+    int num=sc.nextInt();
+    int random_num=random.nextInt(10);
+    System.out.println("random number is:"+random_num);
+    if(num == random_num){
+      System.out.println("guess is correct");
+    }
+    else if(num<random_num){
+      System.out.println("the number is less than random number");
+    }
+    else{
+      System.out.println("the number is greater than random number");
+    }
+  }
+}
+
+//to find the frequency of array elements
+import java.util.Scanner;
+public class FreqArrayMain{
+  public static void main(String[] args){
+    FreqArray fa=new FreqArray();
+    fa.freq();
+  }
+}
+class FreqArray{
+  public void freq(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number of array elements");
+    int n=sc.nextInt();
+    int arr[]=new int[n];
+    System.out.println("enter the array elements");
+    for(int i=0;i<n;i++)
+      arr[i]=sc.nextInt();
+      int count;
+      System.out.println("element\t\tcount");
+      boolean visited[]=new boolean[n];
+      for(int i=0;i<n;i++){
+        if(visited[i]==true)
+          continue;
+          count=1;
+          for(int j=i+1;j<n;j++){
+          if(arr[i]==arr[j]){
+            count=count+1;
+            visited[j]=true;
+          }
+        }
+        System.out.println(arr[i]+ "\t\t" +count);
+      }
+    }
+    
+  }
+
+//prog to find the average of movie rating in 2d array
+import java.util.Scanner;
+public class MovieRatingMain{
+  public static void main(String[] args){
+    MovieRating mr=new MovieRating();
+    mr.movie();
+  }
+}
+class MovieRating{
+  public void movie(){
+    Scanner sc=new Scanner(System.in);
+    int sum=0,avg;
+    int rev[][]=new int[3][4];
+    System.out.println("enter the array elements ");
+    for(int i=0;i<rev.length;i++)
+      for(int j=0;j<rev[i].length;j++)
+        rev[i][j]=sc.nextInt();
+    for(int i=0;i<rev.length;i++){
+      for(int j=0;j<rev[i].length;j++)
+        System.out.print(rev[i][j]);
+        System.out.println();
+      }
+    for(int i=0;i<rev.length;i++)
+      for(int j=0;j<rev[i].length;j++)
+        sum=sum+rev[i][j];
+      avg=sum/12;
+    System.out.println("average rating="+avg);
+    int max=rev[0][1];
+    for(int i=1;i<rev.length;i++){
+      if(rev[0][1]<rev[i][1])
+        max=rev[i][1];
+    }
+    System.out.println("maximum reviev of movie1="+max);
+  
+  }
+}
+
+
