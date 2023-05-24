@@ -1,0 +1,282 @@
+//prog to search all the occurence of character in a string
+import java.util.Scanner;
+public class AllOccurrence{
+  public static void main(String[] args){
+    AllOccur ao=new AllOccur();
+    ao.all();
+  }
+}
+class AllOccur{
+  public void all(){
+    Scanner sc=new Scanner(System.in);
+    boolean found=false;
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    System.out.println("enter a character");
+    char ch=sc.next().charAt(0);
+    System.out.println("all occurences of "+ch+" is at indexes:");
+    for(int i=0;i<str.length();i++){
+      char c=str.charAt(i);
+      if(ch==c){
+        found=true;
+        System.out.println(i);
+    }
+  }
+    if(found==false){
+      System.out.println(ch+" is not found");
+    }
+}
+}
+
+//prog to find number of alphabets digits and special characters in a string
+import java.util.Scanner;
+public class CountAlphaDigitsChar{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    sc.close();
+    int countAlpha=0;
+    int countDigit=0;
+    int countChar=0;
+    for(int i=0;i<str.length();i++){
+      char ch=str.charAt(i);
+    if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z')){
+      countAlpha=countAlpha+1;
+    }
+      else if(ch>='0' && ch<='9'){
+        countDigit=countDigit+1;
+      }
+      else{
+        countChar=countChar+1;
+      }
+      
+      } 
+    System.out.println("total alphabets="+countAlpha);
+    System.out.println("total digits="+countDigit);
+    System.out.println("total special characters="+countChar);
+        }
+  }
+
+
+//prog to count occurences of character in a string
+import java.util.Scanner;
+public class CountOccurrence{
+  public static void main(String[] args){
+    CountOccur co=new CountOccur();
+    co.count();
+  }
+}
+class CountOccur{
+  public void count(){
+    Scanner sc=new Scanner(System.in);
+    int count=0;
+    boolean found=false;
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    System.out.println("enter the character");
+    char ch=sc.next().charAt(0);
+    for(int i=0;i<str.length();i++){
+      char c=str.charAt(i);
+      if(ch==c){
+      found=true;
+      count++;
+    }
+  }
+    System.out.println(ch+" has occured "+count+" times");
+}
+}
+
+//prog to find first occurrece of character in a string
+import java.util.Scanner;
+public class FirstOccurrence{
+  public static void main(String[] args){
+    FirstOccur fo=new FirstOccur();
+    fo.first();
+  }
+}
+class FirstOccur{
+  public void first(){
+    Scanner sc=new Scanner(System.in);
+    boolean found=false;
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    System.out.println("enter a charcter");
+    char ch=sc.next().charAt(0);
+    for(int i=0;i<str.length();i++){
+      char c=str.charAt(i);
+      if(ch==c){
+        found=true;
+      System.out.println("first occurence of "+ch+" is at index "+i);
+      break;
+      }
+    }
+      if(found==false){
+        System.out.println(ch+" is not found");
+      }
+      
+    }
+  }
+
+
+//prog to find frequency of each charcaters in a string
+import java.util.Scanner;
+public class FrequencyString{
+  public static void main(String[] args){
+    Frequency fs=new Frequency();
+    fs.freq();
+  }
+}
+class Frequency{
+  public void freq(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    int count;
+    boolean visited[]=new boolean[str.length()];
+    for(int i=0;i<str.length();i++){
+     char ch=str.charAt(i);
+      if(visited[i]==true)
+        continue;
+      else{
+        count=1;
+        for(int j=i+1;j<str.length();j++){
+          if(str.charAt(i)==str.charAt(j)){
+            count++;
+            visited[j]=true;
+          }
+        }
+      }
+      System.out.println("frequency of "+ch+" is "+count);
+    }
+  }
+}
+
+    boolean found=false;
+
+//wap to find the last occurrence of character in a string
+import java.util.Scanner;
+public class LastOccurrence{
+  public static void main(String[] args){
+    LastOccur lo=new LastOccur();
+    lo.last();
+  }
+}
+class LastOccur{
+  public void last(){
+    Scanner sc=new Scanner(System.in);
+    boolean found=false;
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    System.out.println("enter the character");
+    char ch=sc.next().charAt(0);
+    for(int i=str.length()-1;i>=0;i--){
+      char c=str.charAt(i);
+      if(ch==c){
+        found=true;
+      System.out.println("last occurrence of "+ch+" is at index "+i);
+        break;
+    }
+    }
+    if(found==false){
+      System.out.println(ch+" is not found");
+    }
+  }
+}
+
+//prog to count total number of words in string
+import java.util.Scanner;
+public class NumWordsString{
+  public static void main(String[] args){
+    NumWords nm=new NumWords();
+    nm.num();
+  }
+}
+class NumWords{
+  public void num(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    String words[]=str.split(" ");
+    int numOfWords=words.length;
+    System.out.println("number of words are:"+numOfWords);
+    
+  }
+}
+
+
+//program to check whether a string is a palindrome or not
+import java.util.Scanner;
+public class PalindromeString{
+  public static void main(String[] args){
+    PalindromeStr ps=new PalindromeStr();
+    ps.palindrome();
+  }
+}
+class PalindromeStr{
+  public void palindrome(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    String temp=str,rev="";
+    for(int i=str.length()-1;i>=0;i--){
+      char ch=str.charAt(i);
+      rev=rev+ch;
+    }
+    if(rev.equals(temp)){
+      System.out.println("it is a palindrome");
+    }
+    else{
+      System.out.println("it is not a palidrome");
+    }
+  }
+}
+
+// WAP to find reverse of a string.
+import java.util.Scanner;
+public class RevString{
+  public static void main(String[] args){
+    RevStr rs=new RevStr();
+    rs.reverse();
+  }
+}
+class RevStr{
+  public void reverse(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    String temp=str,rev="";
+    for(int i=str.length()-1;i>=0;i--){
+      char ch=str.charAt(i);
+      rev=rev+ch;
+    }
+    System.out.println("reverse of the string is :"+rev);
+    
+  }
+}
+
+//prog to find number of vowels and consonants in a string 
+import java.util.Scanner;
+public class VowelString{
+  public static void main(String[] args){
+  
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    int vowelCount=0;
+    int consCount=0;
+    for(int i=0;i<str.length();i++){
+      char ch=str.charAt(i);
+      if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z')){
+        if((ch =='a'|| ch =='e'|| ch =='i'|| ch =='o'||ch=='u')||(ch=='A'||ch=='E'||ch=='I'||ch =='O'||ch=='U'))
+          vowelCount++;
+      
+       else
+        consCount++;
+      
+      }
+    }
+      System.out.println("number of vowels =" +vowelCount);
+      System.out.println("number of consonants="+consCount);
+    }
+  }
