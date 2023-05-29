@@ -1,0 +1,238 @@
+/*write the method BracketMatcher(str) take the str parameter being passed and return 1 if the brackets are correctly
+matched and each one is accounted for. Otherwise return 0. For example: if str is "(hello (world))", 
+then the output should be 1, but if str is "((hello (world))" the the output should be 0
+because the brackets do not correctly match up. Only "(" and ")" will be used as brackets. 
+If str contains no brackets return 1.*/
+import java.util.Scanner;
+public class BracketMatcher{
+  public static void main(String[] args){
+    Bracket bm=new Bracket();
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    int b=bm.match(str);
+    if(b==1)
+      System.out.println("brackets matched  1");
+    else
+       System.out.println("brackets unmatched  0");
+  }
+}
+class Bracket{
+  public int match(String s1){
+    char ch;
+    int open=0,close=0;
+    for(int i=0;i<s1.length();i++){
+    ch=s1.charAt(i);
+    if(ch=='(')
+      open++;
+    else if(ch==')')
+    close++;
+    }
+    if(open==close)
+      return 1;
+    else
+      return 0;
+  }
+}
+
+//string buffer
+public class Buffer{
+  public static void main(String[] args){
+    StringBuffer sb=new StringBuffer("Hello");
+    //appending
+    sb.append(" bitlabs");
+    System.out.println(sb);
+    //inserting
+    sb.insert(13," Interns");
+    System.out.println(sb);
+    //deleting
+    sb.delete(0,6);
+    System.out.println(sb);
+    //replacing
+    sb.replace(8,15,"tekworks");
+    System.out.println(sb);
+    //reversing
+    sb.reverse();
+    System.out.println(sb);
+  }
+}
+
+
+//string bulider
+public class Builder{
+  public static void main(String[] args){
+    StringBuilder sb=new StringBuilder("Hello");
+    //appending
+    sb.append(" bitlabs");
+    System.out.println(sb);
+    //inserting
+    sb.insert(13," Interns of tagore batch");
+    System.out.println(sb);
+    //deleting
+    sb.delete(0,6);
+    System.out.println(sb);
+    //replacing
+    sb.replace(8,15,"tekworks");
+    System.out.println(sb);
+    //reversing
+    sb.reverse();
+    System.out.println(sb);
+  }
+}
+
+//write a java program to find the largest palindrome word in a string
+import java.util.Scanner;
+public class LargestPalindrome{
+  public static void main(String[] args){
+    Largest lp=new Largest();
+    lp.large();
+  }
+}
+class Largest{
+  public void large(){
+    Scanner sc=new Scanner(System.in);
+    String word="";
+    int length=0;
+    String largePalin="";
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    String words[]=str.split(" ");
+    for(int i=0;i<words.length;i++){
+      String revWord="";
+      word=words[i];
+      for(int j=word.length()-1;j>=0;j--){
+        revWord=revWord+word.charAt(j);
+      }
+      if(revWord.equals(word)){
+        if(length<word.length()){
+          length=word.length();
+          largePalin=word;
+        }
+      }
+    }
+
+  System.out.println("largest palindrome word is " +largePalin);
+}
+}
+
+//write a java program that returns the longest word in the string.If there are two or more words that are the same length, return the first word from the string with that length. Words may also contain numbers, for example "Hello world123 567"
+import java.util.Scanner;
+public class LongestWord{
+  public static void main(String[] args){
+    Longest lw=new Longest();
+    lw.longt();
+  }
+}
+class Longest{
+  public void longt(){
+    Scanner sc=new Scanner(System.in);
+    String longWord="";
+    int longest_length=0,longest;
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    String words[]=str.split(" ");
+    for(int i=0;i<words.length;i++){
+      longest=words[i].length();
+      if(longest_length<longest){
+        longest_length=longest;
+        longWord=words[i];
+      }
+    }
+    System.out.println("longest word is " +longWord+" with length "+longest_length);
+  }
+}
+
+
+//prog to print all palindrome words in a string
+import java.util.Scanner;
+public class PalindromeWord{
+  public static void main(String[] args){
+    Palindrome pw=new Palindrome();
+    pw.palin();
+  }
+}
+class Palindrome{
+  public void palin(){
+    String word="";
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a string");
+    String str=sc.nextLine();
+    String words[]=str.split(" ");
+    for(int i=0;i<words.length;i++){
+      String revWord="";
+       word=words[i]; 
+      for(int j=word.length()-1;j>=0;j--){
+        revWord=revWord+word.charAt(j);
+      }
+      if(revWord.equals(word))
+        System.out.println(word);
+    }
+  }
+}
+
+//You are working on a stock market analysis tool that helps investors analyze historical stock prices. This tool allows users to input an array of stock prices for a specific stock and identifies the minimum and maximum prices to help users make informed investment decisions.You are tasked with writing a program in Java to accomplish this.
+import java.util.Scanner;
+public class StockMa5rket{
+  public static void main(String[] args){
+    StockMark sm=new StockMark();
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter number of stocks");
+    int n=sc.nextInt();
+    double arr[]=new double[n];
+    System.out.println("enter the stock prices");
+    for(int i=0;i<arr.length;i++)
+      arr[i]=sc.nextDouble();
+    sm.stock(arr);
+  }
+}
+class StockMark{
+  public void stock(double[] st){
+    double min=st[0];
+      double max=st[0];
+    for(int i=0;i<st.length;i++){
+      if(min>st[i])
+        min=st[i];
+      if(max<st[i])
+        max=st[i];
+    }
+    System.out.println("minimum stock is : "+min);
+    System.out.println("maximum stock is : "+max);
+    }
+    
+  }
+
+/*You are working on a text editor application that allows users to write sentences. As part of an enhancement to the application, you need to implement a feature that automatically capitalizes the first letter of each word in a sentence. This will make the text appear more visually appealing and adhere to standard writing conventions. You are tasked with writing a program in Java to accomplish this.
+For example, if the user enters "the quick brown fox jumps over the lazy dog", the program should output "The Quick Brown Fox Jumps Over The Lazy Dog".*/
+
+import java.util.Scanner;
+public class TextEditor{
+  public static void main(String[] args){
+    TextEdit te=new TextEdit();
+    te.text();
+  }
+}
+class TextEdit{
+  public void text(){
+    Scanner sc=new Scanner(System.in);
+    String str1="";
+    String word="";
+    String str2="";
+    System.out.println("enter the sentence");
+    String text=sc.nextLine();
+    String words[]=text.split(" ");
+    for(int i=0;i<words.length;i++){
+      char ch=words[i].charAt(0);
+      if(ch>='a'&&ch<='z'){
+        char first=(char)(ch-32);
+        str1=words[i].substring(1);
+        word=first+str1;
+      }
+      else{
+        word=words[i];
+      }  
+      str2=str2+word+" ";
+    }
+    System.out.println(str2);
+    
+  }
+}
