@@ -1,0 +1,177 @@
+//prog to illustarte getters and setters method and this keyword
+class GettersSetters{
+  String name;
+  int id;
+  float salary;
+  String addr;
+  static String company="bitlabs";
+  public void setEname(String name){
+    this.name=name;
+  }
+  public void setEid(int id){
+    this.id=id;
+  }
+  public void setEsalary(float salary){
+    this.salary=salary;
+  }
+  public void setEaddr(String addr){
+    this.addr=addr;
+  }
+  public String getEname(){
+    return name;
+  }
+  public int getEid(){
+    return id;
+  }
+  public float getEsalary(){
+    return salary;
+  }
+  public String getEaddr(){
+    return addr;
+  }
+}
+public class Getters{
+  public static void main(String[] args){
+    Getters gs=new Getters();
+    gs.setEname("Tahir");
+    gs.setEid(1);
+    gs.setEsalary(5000);
+    gs.setEaddr("xyz");
+
+    System.out.println("employee name "+gs.getEname());
+    System.out.println("employee id "+gs.getEid());
+    System.out.println("employee salary "+gs.getEsalary());
+    System.out.println("employee addr "+gs.getEaddr());
+  }
+}
+
+//prog to print employee details using user input
+import java.util.Scanner;
+class Employee{
+  String name;
+  int id;
+  double salary;
+ 
+}
+public class Employ1{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    Employee emp[]=new Employee[3];
+    emp[0]=new Employee();
+    emp[1]=new Employee();
+    emp[2]=new Employee();
+    for(int i=0;i<3;i++){
+      System.out.println("enter employee name,employee id ,employee salary");
+      emp[i].name=sc.nextLine();
+      emp[i].id=sc.nextInt();
+      emp[i].salary=sc.nextDouble();
+      sc.nextLine();
+    }
+    for(int i=0;i<3;i++){
+      System.out.println("employee name : "+emp[i].name);
+      System.out.println("employee id : "+emp[i].id);
+      System.out.println("employee salary : "+emp[i].salary);
+      System.out.println();
+    }
+  }
+}
+
+//prog to print employeee details
+class Employe{
+  String name;
+  int id;
+  double salary;
+public void print(){
+  System.out.println("name is"+name);
+  System.out.println("id is"+id);
+  System.out.println("salary is"+salary);
+}
+}
+public class Emp1{
+  public static void main(String[] args){
+    Employe e1=new Employe();
+    e1.name="Tahir";
+    e1.id=1;
+    e1.salary=10000;
+    e1.print();
+    Employe e2=new Employe();
+    e2.name="xyz";
+    e2.id=2;
+    e2.salary=2000;
+    e2.print();
+}
+}
+
+//PROG TO ILLISUTRATE INHERITANCE
+class Teacher{
+  String Designation;
+  String CollegeName;
+  void does(){
+    System.out.println("teaching");
+  }
+  
+}
+class SoftSkill extends Teacher{
+  String Designation="mentor";
+  String CollegeName="bitlabs";
+  String name="avinash";
+  String subject="Softskill";
+  
+}
+class Technical extends Teacher{
+  String Designation="mentor";
+  String CollegeName="bitlabs";
+  String name="pavan";
+  String subject="java";
+}
+public class Inheritance{
+  public static void main(String[] args){
+    System.out.println("SoftSkill teacher details");
+    SoftSkill s1=new SoftSkill();
+    System.out.println("name "+s1.name);
+    System.out.println("college "+s1.CollegeName);
+    System.out.println("designation "+s1.Designation);
+    System.out.println("subject "+s1.subject);
+    s1.does();
+    System.out.println("technical teacher details");
+    Technical s2=new Technical();
+    System.out.println("name "+s2.name);
+    System.out.println("college "+s2.CollegeName);
+    System.out.println("Designation "+s2.Designation);
+    System.out.println("subject "+s2.subject);
+    s2.does();
+  }
+}
+
+
+//prog to illustarte static method
+class Student{
+  String name;
+  int roll;
+  static String collegeName="ABC";
+  Student(String name,int roll){
+    this.name=name;
+    this.roll=roll;
+
+}
+  void display(){
+    System.out.println("name:"+name+"roll no:"+roll+"collegeName:"+collegeName);
+  }
+  static void changeCollegeName(){
+    collegeName="XYZ";
+  }
+  
+}
+public class Static{
+  public static void main(String[] args){
+    Student s1=new Student("tahir",1);
+    Student s2=new Student("pqr",2);
+    s1.display();
+    s2.display();
+    Student.changeCollegeName();
+    s1.display();
+    s2.display();
+  }
+}
+
+
