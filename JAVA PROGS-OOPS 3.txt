@@ -1,0 +1,116 @@
+//ILLUSTRATING INTERFACE
+interface Game{
+  public void StartGame();
+  Public void StopGame();
+  
+}
+interface Win{
+  public void GameWon();
+  public void GameLost();
+  
+}
+class Interface implements (Game, win){
+  Game.g1=StartGame();
+  System.out.println("game started");
+  Game.g1=StopGame();
+  System.out.println("game ended");
+  Win.w1=GameWon();
+  System.out.println("game won");
+  win.w1=GameLost();
+  System.out.println("game lost");
+}
+public class Test{
+  public static void main(String[] args){
+    Interface in=new Interface();
+    in.StartGame();
+    in.StopGame();
+    in.GameWon();
+    in.GameLost();
+  }
+}
+
+-----------------------------------------------------------------------------
+//method overloading
+class Student{
+  public void display(){
+    for(int i=0;i<10;i++){
+      System.out.println(1);
+    }
+  }
+  public void display(int j){
+    for(int i=0;i<10;i++){
+      System.out.println(j);
+    }
+  }
+}
+class MethodOverloading{
+  public static void main(String[] args){
+    Student s1=new Student();
+    s1.display();
+    System.out.println("\n");
+    s1.display(2);
+    System.out.println("\n");
+  }
+}
+
+--------------------------------------------------------------------------
+//MethodOverriding
+class Person{
+  public void display(int age){
+    if(age>=18){
+      System.out.println("eligible");
+    }
+    else{
+      System.out.println("not eligible");
+    }
+  }
+}
+class Student extends Person{
+  public void display(int age){
+    System.out.println("adult");
+    super.display(age);
+  }
+}
+class MethodOverriding{
+  public static void main(String[] args){
+    Student s1=new Student();
+    s1.display(21);
+    s1.display(17);
+  }
+}
+-----------------------------------------------------------------------------
+//illustarting interface
+interface Game{
+  public void StartGame();
+  public void StopGame();
+  
+}
+interface Win{
+  public void GameWon();
+  public void GameLost();
+  
+}
+class Interface implements Game, Win {
+  public void StartGame(){
+  System.out.println("game started");
+  }
+  public void StopGame(){
+  System.out.println("game ended");
+  }
+  public void GameWon(){
+  System.out.println("game won");
+  }
+  public void GameLost(){
+  System.out.println("game lost");
+  }
+}
+public class TestInterface{
+  public static void main(String[] args){
+    Interface in=new Interface();
+    in.StartGame();
+    in.StopGame();
+    in.GameWon();
+    in.GameLost();
+  }
+}
+
