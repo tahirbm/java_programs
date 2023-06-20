@@ -1,0 +1,117 @@
+//custom exception
+import java.util.Scanner;
+class InsufficientFundException extends Exception{
+  InsufficientFundException(String Message){
+    super(Message);
+  }
+}
+class Withdraw{
+   int balance=10000;
+  public void withdraw(int withdrawamount){
+    try{
+      if(balance<withdrawamount)
+        throw new InsufficientFundException("insufficint funds");
+      
+      else{
+        balance=balance-withdrawamount;
+        System.out.println("balance "+balance);
+      }
+    }
+    catch(InsufficientFundException i){
+      System.out.println("exception caught: "+i.getMessage());
+    }
+  }
+}
+public class AtmException{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    Withdraw w=new Withdraw();
+    System.out.println("enter the amount");
+    int amount=sc.nextInt();
+    w.withdraw(amount);
+  }
+}
+
+------------------------------------------------------------------------------------------
+//MULTITHREAD PRINING PRIME NUM AND EVEN NUMBERS FROM 1-100
+import java.util.Scanner;
+class Prime extends Thread{
+ public void run(){
+   int nf;
+  for(int i=1;i<=100;i++){
+      nf=0;
+    for(int j=1;j<=i;j++){
+      if(i%j==0)
+        nf=nf+1;
+    }
+    if(nf==2)
+      System.out.println("prime"+i);
+    }
+  } 
+ }
+class MultiThreadPrimeEven {
+  public static void main(String[] args){
+    Prime p=new Prime();
+    p.start();
+    for(int i=0;i<=100;i++){
+      if(i%2==0)
+        System.out.println("even"+i);
+    }
+    
+  }
+}
+
+---------------------------------------------------------------------------------------------
+//multithreading in Runnable interface
+class MyRunnable implements Runnable{
+  public void run(){
+    for(int i=0;i<5;i++){
+      System.out.println("child thread");
+    }
+  }
+}
+public class Multithreading{
+  public static void main(String[] args){
+    MyRunnable mr=new MyRunnable();
+    Thread s=new Thread(mr);
+    s.start();
+    for(int i=0;i<5;i++){
+      System.out.println("main thread");
+    }
+  }
+}
+
+---------------------------------------------------------------------------------------
+//thread Synchronisation
+class Sync{
+  int a=0;
+  synchronized void add(){
+    a++;
+  }
+  synchronized void sub(){
+    a--;
+  }
+}
+public class Synchronisation extends Thread{
+  Sync s;
+  Synchronisation(Sync s){
+    this.s=s;
+    start();
+    
+  }
+  public void run(){
+    for(int i=0;i<100;i++){
+      s.sub();
+    }
+  }
+    public static void main(String[] args) throws Exception {
+      Sync s=new Sync();
+      Synchronisation sc=new Synchronisation(s);
+      for(int i=0;i<100;i++){
+        s.add();
+      }
+      sc.join();
+    
+      System.out.println("value is "+s.a);
+    }
+  }
