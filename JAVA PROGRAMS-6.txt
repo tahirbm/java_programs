@@ -1,173 +1,91 @@
-
-1./*WAP to input electricity unit charges and calculate total     electricity bill according to the given condition:
-    For first 50 units Rs. 0.50/unit
-    For next 100 units Rs. 0.75/unit
-    For next 100 units Rs. 1.20/unit
-     For unit above 250 Rs. 1.50/unit
-     An additional surcharge of 20% is added to the bill*/
-import java.util.Scanner;
-
-public class Electricity {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    double unit;
-    double bill;
-    double total_bill;
-    System.out.println("enter the units");
-    unit = sc.nextDouble();
-    if (unit <= 50) {
-      bill = 0.50 * unit;
-    } else if (unit <= 150) {
-      bill = (0.50 * 50) + (unit - 50) * 0.75;
-    } else if (unit <= 250) {
-      bill = (0.50 * 50) + (0.75 * 100) + (unit - 150) * 1.20;
-    } else {
-      bill = (0.50 * 50) + (0.75 * 100) + (1.20 * 100) + (unit - 250) * 1.50;
+//multithreading in Runnable interface
+class MyRunnable implements Runnable{
+  public void run(){
+    for(int i=0;i<5;i++){
+      System.out.println("child thread");
     }
-    total_bill = bill + ((20 / 100) * bill);
-    System.out.println("total bill is:" + total_bill);
-
   }
 }
-
-
-2./*WAP to input basic salary of an employee and calculate its Gross     salary according to following:
-    Basic Salary <= 10000 : HRA = 20%, DA = 80%
-    Basic Salary <= 20000 : HRA = 25%, DA = 90%
-    Basic Salary > 20000 : HRA = 30%, DA = 95%*/
-
-import java.util.Scanner;
-
-public class GrossSalary {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    double basic_salary;
-    double hra, da, gross_salary;
-    System.out.println("enter the basic salary");
-    basic_salary = sc.nextDouble();
-    if (basic_salary <= 10000) {
-      hra = ((20.0 / 100.0) * basic_salary);
-      da = ((80.0 / 100.0) * basic_salary);
-      gross_salary = basic_salary + hra + da;
-      System.out.println("gross salary is:" + gross_salary);
-    } else if (basic_salary <= 20000) {
-      hra = ((25.0 / 100.0) * basic_salary);
-      da = ((90.0 / 100.0) * basic_salary);
-      gross_salary = basic_salary + hra + da;
-      System.out.println("gross salary is:" + gross_salary);
-    } else if (basic_salary > 20000) {
-      hra = ((30.0 / 100.0) * basic_salary);
-      da = ((95.0 / 100.0) * basic_salary);
-      gross_salary = basic_salary + hra + da;
-      System.out.println("gross salary is:" + gross_salary);
-    } else {
-      System.out.println("invalid entry");
-    }
-
-  }
-}
-
-
-3.//Write a program that takes in a number as input and outputs whether it is a perfect square or not. Use conditional statements to implement this program
-import java.lang.Math;
-import java.util.Scanner;
-public class PerfectSquare{
+public class Multithreading{
   public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    int num;
-    System.out.println("Enter the number");
-    num=sc.nextInt();
-    double sq=Math.sqrt(num);
-    if(sq==(int)sq){
-      System.out.println("its is a perfect number");
+    MyRunnable mr=new MyRunnable();
+    Thread s=new Thread(mr);
+    s.start();
+    for(int i=0;i<5;i++){
+      System.out.println("main thread");
     }
-    else{
-      System.out.println("it is not a perfect number");
-    }
-    
+  }
+}
+---------------------------------------------------------------------
+
+//illustarting colletion 
+import java.util.*;
+class Collection1{
+  public static void main(String[] args) throws Exception{
+    Collection c=new ArrayList();
+    c.add("T");
+    c.add("A");
+    c.add("H");
+    c.add("I");
+    c.add("R");
+    System.out.println(c);
+    System.out.println(c.size());
+    ArrayList a=new ArrayList();
+    a.add("B");
+    a.add("M");
+    System.out.println(a);
+    System.out.println(c.removeAll(a));
+    System.out.println(c);
+    System.out.println(c.size());
+    System.out.println(c.removeAll(a));
+    System.out.println(c);
+
+    Iterator i=c.iterator();
+    while(i.hasNext())
+      System.out.println(i.next()+" ");
     
   }
 }
-
-
-
-4.//Write a program that takes in two integers as input and outputs their sum if both the integers are even. If both integers are odd, output their product. If one of the integers is odd and the other is even, output their difference
-import java.util.Scanner;
-public class SumProDiff{
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    int num1,num2;
-    System.out.println("enter number1");
-    num1=sc.nextInt();
-    System.out.println("enter number2");
-    num2=sc.nextInt();
-    if(num1%2==0 && num2%2==0){
-      int sum=num1+num2;
-      System.out.println("sum:"+sum);
-    }
-    else if(num1%2!=0 && num2%2!=0){
-      int product=num1*num2;
-      System.out.println("product:"+product);
-    }
-    else if((num1%2==0 && num2%2!=0) || (num1%2!=0 && num2%2==0)){
-      int difference=num1-num2;
-      System.out.println("difference:"+difference);
-    }
-   
+----------------------------------------------------------------------------------------
+//employee collection objects
+import java.util.*;
+class Employee{
+ int id;
+   String name;
+   int salary;
+  public void setId(int id){
+  this.id=id;
+  }
+  public void setName(String name){
+    this.name=name;
+  }
+  public void setSalary(int salary){
+    this.salary=salary;
+  }
+  public int getId(){
+    return id;
+  }
+  public String getName(){
+    return name;
+  }
+  public int getSalary(){
+    return salary;
   }
 }
-
-5.//Temperature Converter: Create an application that takes a temperature in Celsius or Fahrenheit as input and converts it to the other unit. Use conditional statements to determine whether to convert from Celsius to Fahrenheit or vice versa.
-import java.util.Scanner;
-
-public class Temperature {
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    float c,f;
-    char ch;
-    System.out.println("enter a character");
-    ch=sc.next().charAt(0);
-    if(ch=='c' || ch=='C'){
-      System.out.println("enter the celsius");
-      c=sc.nextFloat();
-      f=(c*9/5+32);
-      System.out.println("fahrenheit value is;"+f);
-    }
-    else if(ch=='f' || ch=='F'){
-      System.out.println("enter the fahrenheit");
-      f=sc.nextFloat();
-      c=(f-32*5/9);
-      System.out.println("celsius value is:"+c);
-    }
-    else{
-      System.out.println("invalid value");
-    }
+class CollEmployee {
+  public static void main(String[] args) throws Exception{
+    ArrayList a1=new ArrayList();
+    Employee e1=new Employee();
+    e1.setId(100);
+    e1.setName("Tahir");
+    e1.setSalary(50000);
+    System.out.println(e1);
+    a1.add(101);
+    a1.add("Xyz");
+    a1.add(100000);
+    System.out.println(a1);
+    Iterator I=a1.iterator();
+    while(I.hasNext())
+      System.out.println(I.nexxt());
   }
 }
-
-
-6.//program to calculate the age using birthdate 
-import java.util.Scanner;
-import java.time.LocalDate;
-import java.time.Period;
-
-public class BirthdayAge {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter your birthdate (YYYY-MM-DD):");
-    String birthdateString = sc.nextLine();
-    LocalDate birthdate = LocalDate.parse(birthdateString);
-    LocalDate currentDate = LocalDate.now();
-    Period age = Period.between(birthdate, currentDate);
-    System.out
-        .println("your age is:" + age.getYears() + "years," + age.getMonths() + "months,and" + age.getDays() + "days");
-    int ageInYears = age.getYears();
-    if (ageInYears >= 18) {
-      System.out.println("you are adult");
-    } else {
-      System.out.println("you are minor");
-    }
-
-  }
-}
-
