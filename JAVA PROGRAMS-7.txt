@@ -1,120 +1,326 @@
-1.//write a java program to read two integers and calculate absolute value ,square root of two integers
-import java.util.Scanner;
-public class AbsoluteSquare{
+//list interface
+import java.util.ArrayList;
+class Book{
+ private String title;
+ private double price;
+ private String authorname;
+
+  public Book(String title,double price,String authorname ){
+    this.title=title;
+    this.price=price;
+    this.authorname=authorname;
+  }
+  public String getName(){
+    return title;
+  }
+  public double getPrice(){
+    return price;
+  }
+  public String getAuthorname(){
+    return authorname;
+  }
+}
+public class ListBook{
   public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    int num1,num2;
-    System.out.println("enter the two numbers");
-    num1=sc.nextInt();
-    num2=sc.nextInt();
-      System.out.println("absolute value of num1:"+(Math.abs(num1)));
-      System.out.println("absolute value of num2 is:"+(Math.abs(num2)));
-    System.out.println("square root of num1:"+(Math.sqrt(num1)));
-    System.out.println("square root of num2 is:"+(Math.sqrt(num2)));
+    ArrayList<Book> bk=new ArrayList<Book>();
+
+    Book bk1=new Book("novel",149,"xyz");
+    Book bk2=new Book("abc",189,"pqr");
+    Book bk3=new Book("qwerty",890,"lmn");
+    bk.add(bk1);
+    bk.add(bk2);
+    bk.add(bk3);
+
+    for(int i=0;i<bk.size();i++){
+      Book b=bk.get(i);
+      System.out.println("title: "+b.getName());
+      System.out.println("price: "+b.getPrice());
+      System.out.println("Author name: "+b.getAuthorname());
     }
   }
+}
+----------------------------------------------------------------------------------
 
-2.//Write a Java program that prompts the user to enter their age and prints out the number of years left until they can retire (assuming retirement age is 65)
-import java.util.Scanner;
+//illustrating list interface
+import java.util.*;
+public class ListInterface{
+  public static void main(String[] args) throws Exception{
+    ArrayList<String> a1=new ArrayList<String>();
+    a1.add("A");
+    a1.add("B");
+    a1.add("C");
+    a1.add("B");
+    
+    System.out.println("orginal Array list:");
+  
+      for(String s:a1){
+      System.out.print(s+" ");
+    }
+    a1.add(4,"E");
+    a1.add(5,"F");
+    System.out.println();
+    System.out.println("List in Forward direction");
+    ListIterator ir=a1.listIterator();
+    while(ir.hasNext()){
+      System.out.print(ir.next()+" ");
+    }
+    System.out.println();
+    System.out.println("List In backward direction");
+    while(ir.hasPrevious()){
+      System.out.print(ir.previous()+" ");
+    }
+  }
+}
+    
+   
+--------------------------------------------------------------------------------
+//illustrating comparator
+import java.util.*;
+class MyComparator implements Comparator{
+  public int compare(Object obj1,Object obj2){
+    Employee empp1=(Emplyoee)obj1;
+    Employee empp2=(Emplyoee)obj2;
 
-public class AgeNumOfYears {
+    int val =empp1.addr.compareTo(empp2.addr);
+      return +val;
+  }
+  class Employee implements Comparable{
+    String name;
+    int id;
+    String addr;
+    Employee(String name,int id,String addr){
+      this.namee=name;
+      this.id=id;
+      this.addr=addr;
+    }
+    public String toString(){
+      return"["+name+","+id+","+addr+"]";
+    }
+    public int commpareTo(Object obj){
+      Employee emp=(Employee)obj;
+      int val=this.addr.compareTo(emp.addr);
+      return val;
+    }
+  }
+  class Comparrator{
+    public static void main(String[] args){
+      Employee emp1=new Employee("abc",121,"Banglore");
+      Employee emp2=new Employee("pqr",111,"Chennai");
+      Employee emp3=new Employee("xyz",101,"hyderabad");
+
+      TreeSet ts=new TreeSet(new MyComparator());
+      ts.add(emp1);
+      ts.add(emp2);
+      ts.add(emp3);
+      System.out.println(ts);
+    }
+  }
+}
+-----------------------------------------------------------------------------
+
+//illustarting comparable
+import java.util.*;
+public class Comparable1{
   public static void main(String[] args){
-    Scanner sc= new Scanner(System.in);
-    int age,number_of_years_left;
-    System.out.println("enter your age");
-    age=sc.nextInt();
-    number_of_years_left=65-age;
-    System.out.println("number of years left for retirement="+number_of_years_left);
+    TreeSet t=new TreeSet(new MyComparator());
+    t.add("A");
+    t.add("Z");
+    t.add("B");
+    t.add("L");
+    t.add("C");
+
+    System.out.println(t);
+  }
+}
+class MyComparator implements Comparator{
+  public int compare(Object obj1,Object obj2){
+    String S1=(String)obj1;
+    String S2=(String)obj2;
+    return -S1.compareTo(S2);
+  }
+}
+
+--------------------------------------------------------------------------------------
+
+//illustarting TreeSet
+import java.util.TreeSet;
+import java.util.*;
+import java.lang.*;
+class Employee implements Comparable{
+  String name;
+   int id;
+   double salary;
+
+  public Employee(String name, int id, double salary) {
+    this.name=name;
+    this.id=id;
+
+    this.salary=salary;
+
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public double getSalary() {
+    return salary;
+  }
+
+  public int compareTo(Object obj) {
+    Employee emp=(Employee)obj;
+    return this.name.compareTo(emp.name);
+  }
+  public String toString(){
+    return"["+"name :"+name+" id:"+id+" salary"+salary+"]";
+  }
+
+}
+
+public class EmployeeTreeSet {
+  public static void main(String[] args) {
+    
+    Employee emp1=new Employee("tahir", 101, 50000);
+    Employee emp2=new Employee("abc", 102, 40000);
+    Employee emp3=new Employee("pqr", 103, 30000);
+    Employee emp4=new Employee("lmn", 104, 20000);
+    TreeSet ts=new TreeSet();
+    ts.add(emp1);
+    ts.add(emp2);
+    ts.add(emp3);
+    ts.add(emp4);
+   System.out.println(ts);
+    for(Object obj: ts){
+      Employee emp=(Employee)obj;
+      System.out.println(emp);
+    }
+  }
+}
+
+-------------------------------------------------------------------------------
+
+//employee treeset
+import java.util.TreeSet;
+import java.util.*;
+import java.lang.*;
+class Employee implements Comparable{
+  String name;
+   int id;
+   double salary;
+
+  public Employee(String name, int id, double salary) {
+    this.name=name;
+    this.id=id;
+
+    this.salary=salary;
+
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public double getSalary() {
+    return salary;
+  }
+
+  public int compareTo(Object obj) {
+    Employee emp=(Employee)obj;
+    if(this.id<emp.id)
+      return -1;
+    return this.name.compareTo(emp.name);
+  }
   
 }
-}
 
-3.//assume that there are 500,200 and 100 notes are there in the ATM. write a java program to find the minimum number of notes to be dispensed for the requested amount using conditionals only . do not use loops
-import java.util.Scanner;
-public class AtmMoney{
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    int amount,min_notes=0,notes;
-    System.out.println("enter the amount");
-    amount=sc.nextInt();
-    if(amount%100==0){
-      if(amount>=500){
-        notes=amount/500;
-        min_notes=min_notes+notes;
-        amount=amount%500;
-      }
-      if(amount>=200){
-        notes=amount/200;
-        min_notes=min_notes+notes;
-        amount=amount%200;
-      }
-      if(amount>=100){
-        notes=amount/100;
-        min_notes=min_notes+notes;
-        amount=amount%100;
-      }  
-        System.out.println("minimum number of notes:"+min_notes);
-      }
-    }
-  }
-
-4./*Write a Java program that prompts the user to enter their weight in kilograms and height in meters, and calculates their body mass index (BMI) using conditional statements and you need to print underweight,healthy ,overweight and obessity according to the following
-    bmi <18                underweight
-    bmi >=18 and bmi<25    healthy
-    bmi>=25 and bmi<30     overweight
-    bmi>=30                obessity*/
-import java.util.Scanner;
-
-public class Bmi {
+public class EmployeeTreeSet2 {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    double weight, height, bmi;
-    System.out.println("enter the weight");
-    weight = sc.nextDouble();
-    System.out.println("enter the height");
-    height = sc.nextDouble();
-    bmi = (weight / (height * height));
-    System.out.println("bmi is:" + bmi);
-    if (bmi < 18) {
-      System.out.println("you are underweight");
-    } else if (bmi >= 18 && bmi < 25) {
-      System.out.println("you are healthy");
-    } else if (bmi >= 25 && bmi < 30) {
-      System.out.println("you are overweight");
-    } else {
-      System.out.println("you are obessity");
+    
+    Employee emp1=new Employee("tahir", 101, 50000);
+    Employee emp2=new Employee("abc", 102, 40000);
+    Employee emp3=new Employee("pqr", 103, 30000);
+    Employee emp4=new Employee("lmn", 104, 20000);
+    TreeSet ts=new TreeSet(new MyComparator());
+    ts.add(emp1);
+    ts.add(emp2);
+    ts.add(emp3);
+    ts.add(emp4);
+   System.out.println(ts);
+    class MyComparator implements Comparator{
+  public int compare(Object obj){
+    return this.id.compareTo(emp.id);
+  }
     }
+    for(Object obj:ts){
+      Employee emp=(Employee)obj;
+      System.out.println(emp);
+    }
+  
   }
 }
 
-5.//Write a Java program that prompts the user to enter three numbers and finds the maximum and minimum values.
-import java.util.Scanner;
-import java.lang.Math;
-public class MaxMin{
+-----------------------------------------------------------------------------------
+
+//hashset and linked hashset
+import java.util.*;
+public class HashSet1{
+  public static void main(String[] args) throws Exception{
+    HashSet hs=new HashSet();
+    hs.add("India");
+    hs.add("Usa");
+    hs.add("china");
+    hs.add(142);
+    hs.add("India");
+    System.out.println("hashset:"+hs);
+    LinkedHashSet ls=new LinkedHashSet();
+    ls.add("India");
+    ls.add("usa");
+    ls.add("china");
+    System.out.println("linked hash set:"+ls);
+  }
+}
+----------------------------------------------------------------------------------
+
+//illustrating treeset
+import java.util.*;
+public class TreeSet1{
   public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    int num1,num2,num3;
-    System.out.println("enter three number");
-    num1=sc.nextInt();
-    num2=sc.nextInt();
-    num3=sc.nextInt();
-    if(num1>num2 && num1>num3){
-      System.out.println("num1 is greater:"+num1);
-    }
-    else if(num2>num3 && num2>num1){
-      System.out.println("num2 is greater:"+num2);
-    }
-    else{
-      System.out.println("num3 is greater:"+num3);
-    }
-    if(num1<num2 && num1<num3){
-      System.out.println("num1 is minimum:"+num1);
-    }
-    else if(num2<num3 && num2<num1){
-      System.out.println("num2 is minimum:"+num1);
-    }
-    else{
-      System.out.println("num3 is minimum:"+num1);
-    }
+    TreeSet ts=new TreeSet();
+    ts.add("T");
+    ts.add("A");
+    ts.add("b");
+    ts.add("m");
+    ts.add("H");
+    ts.add("I");
+    ts.add("R");
+    System.out.print(ts);
+  }
+}
+
+--------------------------------------------------------------------------------
+
+//illustarting treeset
+import java.util.*;
+public class TreeSet2{
+  public static void main(String[] args){
+    TreeSet ts=new TreeSet();
+    ts.add(1);
+    ts.add(2);
+    ts.add(5);
+    ts.add(9);
+    ts.add(3);
+    ts.add(7);
+    ts.add(10);
+    System.out.println(ts);
+    ts.remove(10);
+    System.out.println(ts);
   }
 }
