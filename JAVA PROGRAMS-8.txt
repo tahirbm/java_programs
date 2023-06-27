@@ -1,175 +1,83 @@
-1.//Write a Java program that reads a floating-point number and prints "zero" if the number is zero. Otherwise, print "positive" or "negative". Add "small" if the absolute value of the number is less than 1, or "large" if it exceeds 1,000,000 else add "medium"
-
-import java.util.Scanner;
-import java.lang.Math;
-public class FloatingPointMain{
+//demonstrate vector class
+import java.util.*;
+public class Vector1{
   public static void main(String[] args){
-    FloatingPoint fp=new FloatingPoint();
-    fp.floating();
-  }
-}
-class FloatingPoint{
-  public void floating(){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("enter the number");
-    float num=sc.nextFloat();
-    if(num==0){
-      System.out.println("zero");
-    }
-    else if(num>0){
-      System.out.println("positive");
-    }
-    else if(num<0){
-      System.out.println("negative");
-    }
-  if(num<1 &&num >0){
-      System.out.println("small");
-    }
-    else if(num>1000000){
-      System.out.println("large");
-    }
-    else{
-      System.out.println("medium");
-    }
+    Vector<String> v=new Vector<String>(2);
+    v.addElement("abc");
+    v.addElement("def");
+    v.addElement("ghi");
+    v.addElement("xyz");
+    System.out.println("size is: "+v.size());
+    System.out.println("capacity is: "+v.capacity());
+    v.addElement("pqr");
+    v.addElement("lmo");
+    System.out.println("size is: "+v.size());
+    System.out.println("capacity is: "+v.capacity());
+
+    Enumeration e=v.elements();
+    System.out.println("\nElements are:");
+    while(e.hasMoreElements())
+          System.out.println(e.nextElement());
   }
 }
 
+--------------------------------------------------------------------------------------
 
-2./*Given an integer, , perform the following conditional actions:
+//program to illustrate HashMap Demo
+import java.util.*;
+
  
-If  is odd, print Weird
-If  is even and in the inclusive range of  2 to 5, print Not Weird
-If  is even and in the inclusive range of 6 to 20 , print Weird
-If  is even and greater than 20 , print Not Weird*/
 
-import java.util.Scanner;
-public class IntCondition{
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("enter the number");
-    int num=sc.nextInt();
-    if(num%2!=0){
-      System.out.println("weird");
-    }
-    else {
-      if(num>=2 && num<=5){
-      System.out.println("Not weird");
-    }
-    else if(num>=6 && num<=20){
-      System.out.println("weird");
-    }
-    else if(num>20){
-      System.out.println("not weird");
-    }
-  }
-}
-}
-
-3.//Write a Java program to check if a given integer is a power of 2 or not, using only co nditional statements don't use loops
-import java.util.Scanner;
-public class IntPower{
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("enter the number");
-    int num=sc.nextInt();
-    if (num <= 0) {
-      System.out.println(num + " is not a power of 2");
-    } else if ((num & (num - 1)) == 0) {
-      System.out.println(num + " is a power of 2");
-    } else {
-      System.out.println(num + " is not a power of 2");
+class HashMapDemo {
+  public static void main(String[] args) {
+    HashMap hm = new HashMap();
+    hm.put("A", "AAA");
+    hm.put("B", "BBB");
+    hm.put("C", "CCC");
+    hm.put("D", "DDD");
+    hm.put("E", "EEE");
+    System.out.println(hm); //{A=AAA, B=BBB, C=CCC, D=DDD, E=EEE}
+    HashMap hm1 = new HashMap();
+    hm1.put("X", "XXX");
+    hm1.put("Y", "YYY");
+    System.out.println(hm1);//{X=XXX, Y=YYY}
+    hm.putAll(hm1);
+    System.out.println(hm); //{A=AAA, B=BBB, C=CCC, D=DDD, E=EEE, X=XXX, Y=YYY}
+    System.out.println(hm.get("B"));
+    System.out.println(hm.remove("E"));
+    System.out.println(hm.size());
+    System.out.println(hm.isEmpty());
+    System.out.println(hm.containsKey("D"));
+    System.out.println(hm.containsValue("DDD"));
+    System.out.println(hm.keySet());
+    System.out.println(hm.values());
+    // The method keySet() returns a set of all keys which may be
+    // used to retrieve corresponding values.
+    Set keys = hm.keySet();
+    for (Object k : keys)
+      System.out.println(k + "->" + hm.get(k));
+    // The method entrySet(), on the other hand, returns a set of
+    // Map.Entry objects each of which consists of a key and a value.
+    Set entries = hm.entrySet();
+    for (Object o : entries) {
+      Map.Entry e = (Map.Entry) o;
+      System.out.println(e.getKey() + "->" + e.getValue());
     }
   }
 }
 
+ 
 
-4.//write a java program to check whether number is a valid mobile number or not( A number is valid mobile  number if it contains 10 digits)(use  only conditionals)(don't use loops)
-import java.util.Scanner;
-public class MobileNumberMain{
-  public static void main(String[] args){
-      MobileNumber mn=new MobileNumber();
-      mn.Mobile();
-    }
-  }
-class MobileNumber{
-  public void Mobile(){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("enter mobile number");
-    long m=sc.nextLong();
-    long max=9999999999L;
-    long min=1000000000;
-    if(m>=min && m<=max){
-      
-      System.out.println("valid mobile number");
-    }
-      else{
-      System.out.println("invalid mobile number");
-      }
-  }
-}
+/*
+* A set of the entries in the map is obtained by calling entrySet( ).
+* It returns a Set collection that contains the entries.
+* Each entry is held in an object of type Map.Entry. Given a Map.Entry
+* object, you can obtain the key by calling getKey( ). To obtain the value,
+* call getValue( ). Using
+* the entry set, it is easy to cycle through a map, obtaining each entry in
+* turn.
+*/
 
 
-5.//WAP to print multiplication table of any number.
-import java.util.Scanner;
-public class MultipleTable{
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("enter the number");
-    int n=sc.nextInt();
-    System.out.println("enter the range");
-    int range=sc.nextInt();
-    int i=1;
-    while(i<=range){
-      System.out.println(n+ "*" + i + "="+n*i);
-      i=i+1;
-    }
-  }
-}
+-----------------------------------------------------------------------------
 
-6.//program to find whetehr a number is positive negative or zero
-import java.util.Scanner;
-public class PosNegZero{
-  public static void main(String[] args){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("enter a number");
-    int a=sc.nextInt();
-    if(a>0){
-      System.out.println("a is positive number");
-    }
-    else if(a<0){
-      System.out.println("a is negative number");
-    }
-    else{
-      System.out.println("it is zero");
-    }
-      
-    }
-  }
-
-
-7.//Write a Java program that reads two floating-point numbers and tests whether they are the same up to three decimal places
-
-import java.util.Scanner;
-import java.lang.Math;
-public class TwoFloatingPointMain{
-  public static void main(String[] args){
-    TwoFloatingPoint tf=new TwoFloatingPoint();
-    tf.twofloat();
-  }
-}
-class TwoFloatingPoint{
-  public void twofloat(){
-    Scanner sc= new Scanner(System.in);
-    System.out.println("enter number 1");
-    float num1=sc.nextFloat();
-    System.out.println("enter number 2");
-    float num2=sc.nextFloat();
-    float absolute_value = Math.abs(num1-num2);
-    if(absolute_value<0.001){
-      System.out.println("they are same upto 3 decimal points");
-    }
-    else{
-      System.out.println("they are not same upto 3 decimal points");
-    }
-  }
-}
